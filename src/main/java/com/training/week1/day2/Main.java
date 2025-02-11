@@ -1,4 +1,4 @@
-package com.training.week1;
+package com.training.week1.day2;
 
 import java.util.List;
 
@@ -31,8 +31,7 @@ public class Main {
             System.out.println("\nTransaction History for SAV001:");
             List<Transaction> transactions = bank.getAccount("SAV001").getTransactionHistory();
             for (Transaction transaction : transactions) {
-                System.out.println(transaction.getType() + ": $" +
-                        transaction.getAmount() + " - " + transaction.getDescription());
+                System.out.println(transaction.getType() + ": $" + transaction.getAmount() + " - " + transaction.getDescription());
             }
 
         } catch (InvalidTransactionException e) {

@@ -1,4 +1,4 @@
-package com.training.week1;
+package com.training.week1.day2;
 
 // Custom exception for invalid transactions
 public class InvalidTransactionException extends Exception{

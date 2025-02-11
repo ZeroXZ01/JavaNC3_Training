@@ -1,4 +1,4 @@
-package com.training.week1;
+package com.training.week1.day2;
 
 // Transaction types enum
 public enum TransactionType {

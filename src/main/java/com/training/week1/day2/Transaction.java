@@ -1,4 +1,4 @@
-package com.training.week1;
+package com.training.week1.day2;
 
 import java.time.LocalDateTime;
 

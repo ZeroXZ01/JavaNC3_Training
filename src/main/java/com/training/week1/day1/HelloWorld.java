@@ -1,5 +1,5 @@
 // src/main/java/com/training/week1/HelloWorld.java
-package com.training.week1;
+package com.training.week1.day1;
 
 public class HelloWorld {
     public static void main(String[] args) {
