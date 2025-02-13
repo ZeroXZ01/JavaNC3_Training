@@ -10,8 +10,7 @@ public class TransactionLogger {
     private static final String LOG_FILE = "bank_transactions.txt";
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    public static void logTransaction(String accountNumber, TransactionType type, double amount,
-                                      double balanceAfter, String description) {
+    public static void logTransaction(String accountNumber, TransactionType type, double amount, double balanceAfter, String description) {
         LocalDateTime timestamp = LocalDateTime.now();
         String logEntry = String.format("[%s] Account: %s | Type: %s | Amount: $%.2f | Balance: $%.2f | %s%n",
                 timestamp.format(formatter),
