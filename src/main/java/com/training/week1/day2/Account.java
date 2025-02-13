@@ -36,7 +36,22 @@ public abstract class Account {
         }
 
         balance += amount;
-        transactionHistory.add(new Transaction(TransactionType.DEPOSIT, amount, "Deposit to " + accountNumber, LocalDateTime.now()));
+        Transaction transaction = new Transaction(
+                TransactionType.DEPOSIT,
+                amount,
+                "Deposit to " + accountNumber,
+                LocalDateTime.now()
+        );
+        transactionHistory.add(transaction);
+
+        // Add logging
+        TransactionLogger.logTransaction(
+                accountNumber,
+                TransactionType.DEPOSIT,
+                amount,
+                balance,
+                "Deposit processed"
+        );
     }
 
     public void withdraw(double amount) throws InvalidTransactionException {
@@ -48,6 +63,21 @@ public abstract class Account {
         }
 
         balance -= amount;
-        transactionHistory.add(new Transaction(TransactionType.WITHDRAWAL, amount, "Withdrawal from " + accountNumber, LocalDateTime.now()));
+        Transaction transaction = new Transaction(
+                TransactionType.WITHDRAWAL,
+                amount,
+                "Withdrawal from " + accountNumber,
+                LocalDateTime.now()
+        );
+        transactionHistory.add(transaction);
+
+        // Add logging
+        TransactionLogger.logTransaction(
+                accountNumber,
+                TransactionType.WITHDRAWAL,
+                amount,
+                balance,
+                "Withdrawal processed"
+        );
     }
 }

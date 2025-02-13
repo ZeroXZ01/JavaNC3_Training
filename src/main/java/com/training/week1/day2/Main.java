@@ -15,23 +15,21 @@ public class Main {
             bank.getAccount("SAV001").deposit(200.0);
             bank.transfer("SAV001", "CHK001", 300.0);
 
-            // Print balances
-            System.out.println("SAV001 Balance: $" + bank.getAccount("SAV001").getBalance());
-            System.out.println("CHK001 Balance: $" + bank.getAccount("CHK001").getBalance());
-
             // Process monthly activities
             bank.monthlyProcessing();
 
-            // Print updated balances
-            System.out.println("\nAfter monthly processing:");
-            System.out.println("SAV001 Balance: $" + bank.getAccount("SAV001").getBalance());
-            System.out.println("CHK001 Balance: $" + bank.getAccount("CHK001").getBalance());
+            // Print transaction history from log file
+            System.out.println("\nTransaction History from Log File:");
+            List<String> transactions = TransactionLogger.getTransactionHistory();
+            for (String transaction : transactions) {
+                System.out.println(transaction);
+            }
 
-            // Print transaction history for SAV001
-            System.out.println("\nTransaction History for SAV001:");
-            List<Transaction> transactions = bank.getAccount("SAV001").getTransactionHistory();
-            for (Transaction transaction : transactions) {
-                System.out.println(transaction.getType() + ": $" + transaction.getAmount() + " - " + transaction.getDescription());
+            // Print transactions for specific account
+            System.out.println("\nSAV001 Transactions:");
+            List<String> accountTransactions = TransactionLogger.getAccountTransactions("SAV001");
+            for (String transaction : accountTransactions) {
+                System.out.println(transaction);
             }
 
         } catch (InvalidTransactionException e) {
