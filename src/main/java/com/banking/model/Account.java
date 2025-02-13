@@ -23,9 +23,7 @@ public abstract class Account {
 
     private void validateInitialBalance(double initialBalance) {
         if (initialBalance < type.getMinimumBalance()) {
-            throw new IllegalArgumentException(
-                    String.format("Initial balance must be at least $%.2f for %s account",
-                            type.getMinimumBalance(), type)
+            throw new IllegalArgumentException(String.format("Initial balance must be at least $%.2f for %s account", type.getMinimumBalance(), type)
             );
         }
     }
@@ -60,9 +58,18 @@ public abstract class Account {
     public abstract void monthlyProcessing();
 
     // Getters
-    public String getAccountNumber() { return accountNumber; }
-    public double getBalance() { return balance; }
-    public AccountType getType() { return type; }
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public AccountType getType() {
+        return type;
+    }
+
     public List<Transaction> getTransactionHistory() {
         return Collections.unmodifiableList(transactionHistory);
     }

@@ -2,7 +2,7 @@ package com.banking.model;
 
 import com.banking.exception.TransactionLimitException;
 
-public class CheckingAccount extends Account{
+public class CheckingAccount extends Account {
     private static final double MONTHLY_FEE = 12.0;
     private static final int MONTHLY_TRANSACTION_LIMIT = 100;
     private int transactionCount;

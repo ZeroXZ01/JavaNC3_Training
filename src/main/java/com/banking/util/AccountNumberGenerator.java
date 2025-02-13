@@ -8,8 +8,6 @@ public class AccountNumberGenerator {
     private final AtomicInteger counter = new AtomicInteger(1);
 
     public String generateAccountNumber(AccountType type) {
-        return String.format("%s%05d", type.getCode(),
-                counter.getAndIncrement()
-        );
+        return String.format("%s%05d", type.getCode(), counter.getAndIncrement());
     }
 }

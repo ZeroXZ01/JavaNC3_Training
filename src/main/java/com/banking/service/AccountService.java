@@ -7,7 +7,6 @@ import com.banking.model.AccountType;
 import com.banking.model.CheckingAccount;
 import com.banking.model.SavingsAccount;
 import com.banking.util.AccountNumberGenerator;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -62,7 +61,6 @@ public class AccountService {
         accounts.put(accountNumber, account);
         return account;
     }
-
 
     public void transfer(String fromAccountNumber, String toAccountNumber, double amount) {
         Account fromAccount = getAccount(fromAccountNumber);

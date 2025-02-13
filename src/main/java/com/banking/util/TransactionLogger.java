@@ -11,8 +11,7 @@ import java.time.format.DateTimeFormatter;
 public class TransactionLogger {
     private static final TransactionLogger INSTANCE = new TransactionLogger();
     private static final String LOG_FILE = "transactions.log";
-    private static final DateTimeFormatter DATE_FORMATTER =
-            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private TransactionLogger() {}
 

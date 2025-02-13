@@ -16,8 +16,19 @@ public class Transaction {
     }
 
     // Getters
-    public TransactionType getType() { return type; }
-    public double getAmount() { return amount; }
-    public double getResultingBalance() { return resultingBalance; }
-    public LocalDateTime getTimestamp() { return timestamp; }
+    public TransactionType getType() {
+        return type;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public double getResultingBalance() {
+        return resultingBalance;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
 }
