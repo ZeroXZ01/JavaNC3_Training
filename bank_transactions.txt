@@ -1,0 +1,5 @@
+[2025-02-13 10:40:36] Account: SAV001 | Type: DEPOSIT | Amount: $200.00 | Balance: $1200.00 | Deposit processed
+[2025-02-13 10:40:36] Account: SAV001 | Type: WITHDRAWAL | Amount: $300.00 | Balance: $900.00 | Withdrawal processed
+[2025-02-13 10:40:36] Account: CHK001 | Type: DEPOSIT | Amount: $300.00 | Balance: $800.00 | Deposit processed
+[2025-02-13 10:40:36] Account: SAV001 | Type: TRANSFER | Amount: $300.00 | Balance: $900.00 | Transfer to CHK001
+[2025-02-13 10:40:36] Account: CHK001 | Type: TRANSFER | Amount: $300.00 | Balance: $800.00 | Transfer from SAV001
