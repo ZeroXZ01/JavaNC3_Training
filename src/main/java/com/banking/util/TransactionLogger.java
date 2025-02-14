@@ -2,11 +2,15 @@ package com.banking.util;
 
 import com.banking.model.Transaction;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TransactionLogger {
     private static final TransactionLogger INSTANCE = new TransactionLogger();
@@ -40,5 +44,33 @@ public class TransactionLogger {
                 transaction.getType(),
                 transaction.getAmount(),
                 transaction.getResultingBalance());
+    }
+
+    public static List<String> getTransactionHistory() {
+        List<String> transactions = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(LOG_FILE))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                transactions.add(line);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading transaction log: " + e.getMessage());
+        }
+        return transactions;
+    }
+
+    public static List<String> getAccountTransactions(String accountNumber) {
+        List<String> accountTransactions = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(LOG_FILE))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.contains("Account: " + accountNumber)) {
+                    accountTransactions.add(line);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading transaction log: " + e.getMessage());
+        }
+        return accountTransactions;
     }
 }

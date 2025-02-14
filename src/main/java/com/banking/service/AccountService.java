@@ -20,22 +20,6 @@ public class AccountService {
         this.transactionService = new TransactionService();
     }
 
-//    public Account createAccount(AccountType type, double initialBalance) {
-//        String accountNumber = accountNumberGenerator.generateAccountNumber(type);
-//
-//        Account account = switch (type) {
-//            case SAVINGS -> new SavingsAccount(accountNumber, initialBalance);
-//            case CHECKING -> new CheckingAccount(accountNumber, initialBalance);
-//            case MONEY_MARKET -> throw new UnsupportedOperationException("Money Market accounts not implemented yet");
-//        }; // Converted to Java 14
-//
-//        // Java 11 Version
-//
-//        accounts.put(accountNumber, account);
-//        return account;
-//    }
-
-    // Version 2 of Create Account
     public Account createAccount(AccountType type, double initialBalance) throws InvalidTransactionException {
         String accountNumber = accountNumberGenerator.generateAccountNumber(type);
 
